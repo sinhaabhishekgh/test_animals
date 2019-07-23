@@ -29,24 +29,21 @@ public class SecATests {
 	private AnimalFactory factory;
 
 	@Test
-	public void birdCanSing() {
+	public void birdCanSing() throws Exception{
 		
 		Attributes birdAttributes = 
 				new Attributes(AnimalType.BIRD, Voice.SING, Color.MULTI_COLOR, Arrays.asList(Actions.WALK, Actions.FLY), null, null, Dimension.SMALL);
 		Animal bird = factory.getAnimal(birdAttributes);
 		
-		try {
 			assertTrue((((Bird)bird).walk()).contains(Actions.WALK.getDescription()));
 			assertTrue((((Bird)bird).fly()).contains(Actions.FLY.getDescription()));
 			assertTrue((((Bird)bird).sing()).contains("Bird singing"));
-		}catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		
 	}
 	
 	
 	@Test
-	public void duckAndChickenDiffVoice() {
+	public void duckAndChickenDiffVoice() throws Exception{
 		
 		Attributes duckAttributes = 
 				new Attributes(AnimalType.DUCK, Voice.BASIC_VOICE, null, Arrays.asList(Actions.WALK, Actions.FLY, Actions.SWIM), null, null, null);
@@ -57,14 +54,12 @@ public class SecATests {
 		Animal chicken = factory.getAnimal(chickenAttributes);
 		
 		
-		try {
+	
 			assertTrue((((Bird)duck).speak()).contains("Quack, quack"));
 			assertTrue((((Bird)duck).swim()).contains(Actions.SWIM.getDescription()));
 			
 			assertTrue((((Bird)chicken).speak()).contains("Cluck, cluck"));
-		}catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		
 	}
 	
 	@Test(expected = CustomException.class)
@@ -77,23 +72,21 @@ public class SecATests {
 	
 	
 	@Test
-	public void roosterDifferentThanChicken() {
+	public void roosterDifferentThanChicken() throws Exception{
 		
 		Attributes roosterAttributes = 
 				new Attributes(AnimalType.ROOSTER, Voice.BASIC_VOICE, null, Arrays.asList(Actions.WALK, Actions.FLY), null, null, null);
 		Animal rooster = factory.getAnimal(roosterAttributes);
 		
 		
-		try {
+		
 			assertTrue((((Bird)rooster).speak()).contains("Cock-a-doodle-doo"));
-		}catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		
 	}
 	
 	
 	@Test
-	public void parrotWithDogCatAndRooster() {
+	public void parrotWithDogCatAndRooster() throws Exception{
 		
 		Attributes parrotWithDogAtt = 
 				new Attributes(AnimalType.PARROT, Voice.LEARNABLE_VOICE, null, Arrays.asList(Actions.WALK, Actions.FLY), AnimalType.DOG, null, null);
@@ -108,14 +101,11 @@ public class SecATests {
 		Animal parrotWithRooster = factory.getAnimal(parrotWithRooAtt);
 		
 		
-		try {
+		
 			assertTrue((((Bird)parrotWithDog).speak()).contains("Woof, woof"));
 			assertTrue((((Bird)parrotWithCat).speak()).contains("Meow"));
 			assertTrue((((Bird)parrotWithRooster).speak()).contains("Cock-a-doodle-doo"));
-			
-		}catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		
 	}
 
 }

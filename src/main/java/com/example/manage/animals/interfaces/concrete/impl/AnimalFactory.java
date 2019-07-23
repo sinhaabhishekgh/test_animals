@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import com.example.manage.animals.interfaces.Animal;
 import com.example.manage.animals.interfaces.Bird;
+import com.example.manage.animals.interfaces.Fish;
 import com.example.manage.animals.interfaces.Mammal;
 import com.example.manage.animals.operational.entity.Attributes;
 import com.example.manage.animals.operational.entity.ManageVoice;
@@ -28,6 +29,8 @@ public class AnimalFactory {
 			return new MammalImpl(attribute);
 		}else if(Bird.types.contains(attribute.getType())) {
 			return new BirdImpl(attribute,manageVoice);
+		}else if(Fish.types.contains(attribute.getType())) {
+			return new FishImpl(attribute);
 		}
 		
 		return null;

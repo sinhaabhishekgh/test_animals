@@ -60,6 +60,23 @@ public class ManageAnimals {
 				new Attributes(AnimalType.PARROT, Voice.LEARNABLE_VOICE, null, Arrays.asList(Actions.WALK, Actions.FLY), AnimalType.ROOSTER, null, null);
 		Animal parrotWithRooster = factory.getAnimal(parrotWithRooAtt);
 		
+		Attributes fishAttributes = 
+				new Attributes(AnimalType.FISH, null, null, Arrays.asList(Actions.SWIM), null, null, null);
+		Animal fish = factory.getAnimal(fishAttributes);
+
+		Attributes sharkAttributes = 
+				new Attributes(AnimalType.SHARK, null, Color.GREY, Arrays.asList(Actions.SWIM), null, null, Dimension.LARGE);
+		Animal shark = factory.getAnimal(sharkAttributes);
+		
+		Attributes clownfishAttributes = 
+				new Attributes(AnimalType.CLOWNFISH, null, Color.MULTI_COLOR, Arrays.asList(Actions.SWIM), null, null, Dimension.SMALL);
+		Animal clownfish = factory.getAnimal(clownfishAttributes);
+		
+		
+		Attributes dolphinAttributes = 
+				new Attributes(AnimalType.DOLPHIN, null, null, Arrays.asList(Actions.SWIM), null, null, null);
+		Animal dolphin = factory.getAnimal(dolphinAttributes);
+		
 		animals.add(bird);
 		animals.add(duck);
 		animals.add(chicken);
@@ -67,6 +84,10 @@ public class ManageAnimals {
 		animals.add(parrotWithDog);
 		animals.add(parrotWithCat);
 		animals.add(parrotWithRooster);
+		animals.add(fish);
+		animals.add(shark);
+		animals.add(clownfish);
+		animals.add(dolphin);
 	
 	}
 	

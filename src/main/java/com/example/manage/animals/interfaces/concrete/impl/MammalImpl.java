@@ -2,18 +2,17 @@ package com.example.manage.animals.interfaces.concrete.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.example.manage.animals.attributes.entity.Actions;
+import com.example.manage.animals.exception.CustomException;
+import com.example.manage.animals.exception.ErrorConstants;
 import com.example.manage.animals.interfaces.Mammal;
 import com.example.manage.animals.operational.entity.Attributes;
-import com.example.manage.animals.operational.entity.ManageVoice;
 
 public class MammalImpl implements Mammal{
 	
 	
 	private Attributes attributes;
 
-	@Autowired
-	private ManageVoice manageVoice;
-	
 	
 	public MammalImpl(Attributes attributes) {
 		super();
@@ -22,15 +21,15 @@ public class MammalImpl implements Mammal{
 
 
 	@Override
-	public void walk() {
-		// TODO Auto-generated method stub
-		
+	public String swim() throws CustomException {
+		if(attributes.getActions().contains(Actions.SWIM)) {
+			return Actions.SWIM.getDescription();
+		}else {
+			throw new CustomException(ErrorConstants.CAN_NOT_SWIM);
+		}
 	}
 
-	@Override
-	public void swim() {
-		// TODO Auto-generated method stub
-		
-	}
+
+	
 
 }
