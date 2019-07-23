@@ -8,7 +8,7 @@ import com.example.manage.animals.exception.CustomException;
 
 public interface Bird extends Animal {
 	
-	static List<AnimalType> types = Arrays.asList(AnimalType.BIRD, AnimalType.CHICKEN, AnimalType.DUCK, AnimalType.ROOSTER, AnimalType.PARROT);
+	static List<AnimalType> types = Arrays.asList(AnimalType.BIRD, AnimalType.CHICKEN, AnimalType.DUCK, AnimalType.ROOSTER, AnimalType.PARROT, AnimalType.BUTTERFLY, AnimalType.CATTERPILOR);
 	
 	String fly() throws CustomException;
 	

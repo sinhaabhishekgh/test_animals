@@ -77,6 +77,14 @@ public class ManageAnimals {
 				new Attributes(AnimalType.DOLPHIN, null, null, Arrays.asList(Actions.SWIM), null, null, null);
 		Animal dolphin = factory.getAnimal(dolphinAttributes);
 		
+		Attributes butterflyAttributes = 
+				new Attributes(AnimalType.BUTTERFLY, Voice.NO_VOICE, null, Arrays.asList(Actions.FLY), null, null, null);
+		Animal butterfly = factory.getAnimal(butterflyAttributes);
+		
+		Attributes caterpilarAttributes = 
+				new Attributes(AnimalType.CATTERPILOR, Voice.NO_VOICE, null, Arrays.asList(Actions.CRAWL), null, null, null);
+		Animal catterpilar = factory.getAnimal(caterpilarAttributes);
+		
 		animals.add(bird);
 		animals.add(duck);
 		animals.add(chicken);
@@ -88,6 +96,8 @@ public class ManageAnimals {
 		animals.add(shark);
 		animals.add(clownfish);
 		animals.add(dolphin);
+		animals.add(butterfly);
+		animals.add(catterpilar);
 	
 	}
 	
